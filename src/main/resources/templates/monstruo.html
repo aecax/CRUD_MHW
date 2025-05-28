@@ -1,13 +1,35 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="index :: head">
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Monstruos</title>
 </head>
-<body>
-<h1>Monstruo: </h1>
-<h1 th:text="${monstruo.nombre}"></h1>
-<h1>Clase: </h1>
-<h1 th:text="${monstruo.clase}"></h1>
+<body class="d-flex flex-column min-vh-100">
+    <nav th:replace="index :: navbar"></nav>
+
+    <div class="card" style="width: 18rem;">
+        <img th:src="${monstruo.imagen}" class="card-img-top" th:alt="${monstruo.nombre}">
+        <div class="card-body">
+            <h5 class="card-title">Nombre</h5>
+            <h6 th:text="${monstruo.nombre}" class="card-subtitle"></h6>
+            <h5 class="card-title">Clase</h5>
+            <h6 th:text="${monstruo.clase}" class="card-subtitle"></h6>
+            <h5 class="card-title">Elemento(s)</h5>
+            <h6 th:text="${monstruo.elementos}" class="card-subtitle"></h6>
+            <h5 class="card-title">Estado(s)</h5>
+            <h6 th:text="${monstruo.estados}" class="card-subtitle"></h6>
+            <h5 class="card-title">Debíl a</h5>
+            <h6 th:text="${monstruo.elementosdebil}" class="card-subtitle"></h6>
+            <h5 class="card-title">Hábitat(s)</h5>
+            <h6 th:text="${monstruo.habitat}" class="card-subtitle"></h6>
+            <h5 class="card-title">Pariente(s)</h5>
+            <h6 th:text="${monstruo.parientes}" class="card-subtitle"></h6>
+            <h5 class="card-title">Generación</h5>
+            <h6 th:text="${monstruo.generacion}" class="card-subtitle"></h6>
+        </div>
+    </div>
+
 </body>
+<footer th:replace="index :: footer"></footer>
+<div th:replace="index :: jsincludes"></div>
 </html>

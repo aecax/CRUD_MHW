@@ -15,7 +15,7 @@ public class MHWController {
     }
     @GetMapping("/monstruo/")
     public String monstruo(Model model){
-        Monstruo monstruo = new Monstruo(1,"Anjanath","Wyvern Fauces Feroces","Fuego","Plaga de fuego","Agua","Bosque Primigeneo","Anjanath Fulgúreo","Quinta");
+        Monstruo monstruo = new Monstruo(1,"Anjanath","https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em100_ID.png","Wyvern Fauces Feroces","Fuego","Plaga de fuego","Agua","Bosque Primigeneo","Anjanath Fulgúreo","Quinta");
         model.addAttribute("monstruo",monstruo);
         return "monstruo";
     }

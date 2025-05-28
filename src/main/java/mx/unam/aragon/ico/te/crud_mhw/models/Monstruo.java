@@ -5,6 +5,7 @@ import java.util.Objects;
 public class Monstruo {
     private int id;
     private String nombre;
+    private String imagen;
     private String clase;
     private String elementos;
     private String estados;
@@ -13,20 +14,32 @@ public class Monstruo {
     private String parientes;
     private String generacion;
 
-    public Monstruo(){
-
+    @Override
+    public String toString() {
+        return "Monstruo{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", imagen='" + imagen + '\'' +
+                ", clase='" + clase + '\'' +
+                ", elementos='" + elementos + '\'' +
+                ", estados='" + estados + '\'' +
+                ", elementosdebil='" + elementosdebil + '\'' +
+                ", habitat='" + habitat + '\'' +
+                ", parientes='" + parientes + '\'' +
+                ", generacion='" + generacion + '\'' +
+                '}';
     }
 
-    public Monstruo(int id, String nombre, String clase, String elementos, String estados, String elementosdebil, String habitat, String parientes, String generacion) {
-        this.id = id;
-        this.nombre = nombre;
-        this.clase = clase;
-        this.elementos = elementos;
-        this.estados = estados;
-        this.elementosdebil = elementosdebil;
-        this.habitat = habitat;
-        this.parientes = parientes;
-        this.generacion = generacion;
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Monstruo monstruo = (Monstruo) o;
+        return id == monstruo.id && Objects.equals(nombre, monstruo.nombre) && Objects.equals(imagen, monstruo.imagen) && Objects.equals(clase, monstruo.clase) && Objects.equals(elementos, monstruo.elementos) && Objects.equals(estados, monstruo.estados) && Objects.equals(elementosdebil, monstruo.elementosdebil) && Objects.equals(habitat, monstruo.habitat) && Objects.equals(parientes, monstruo.parientes) && Objects.equals(generacion, monstruo.generacion);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, nombre, imagen, clase, elementos, estados, elementosdebil, habitat, parientes, generacion);
     }
 
     public int getId() {
@@ -43,6 +56,14 @@ public class Monstruo {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 
     public String getClase() {
@@ -101,30 +122,16 @@ public class Monstruo {
         this.generacion = generacion;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        Monstruo monstruo = (Monstruo) o;
-        return id == monstruo.id && Objects.equals(nombre, monstruo.nombre) && Objects.equals(clase, monstruo.clase) && Objects.equals(elementos, monstruo.elementos) && Objects.equals(estados, monstruo.estados) && Objects.equals(elementosdebil, monstruo.elementosdebil) && Objects.equals(habitat, monstruo.habitat) && Objects.equals(parientes, monstruo.parientes) && Objects.equals(generacion, monstruo.generacion);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, nombre, clase, elementos, estados, elementosdebil, habitat, parientes, generacion);
-    }
-
-    @Override
-    public String toString() {
-        return "Monstruo{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", clase='" + clase + '\'' +
-                ", elementos='" + elementos + '\'' +
-                ", estados='" + estados + '\'' +
-                ", elementosdebil='" + elementosdebil + '\'' +
-                ", habitat='" + habitat + '\'' +
-                ", parientes='" + parientes + '\'' +
-                ", generacion='" + generacion + '\'' +
-                '}';
+    public Monstruo(int id, String nombre, String imagen, String clase, String elementos, String estados, String elementosdebil, String habitat, String parientes, String generacion) {
+        this.id = id;
+        this.nombre = nombre;
+        this.imagen = imagen;
+        this.clase = clase;
+        this.elementos = elementos;
+        this.estados = estados;
+        this.elementosdebil = elementosdebil;
+        this.habitat = habitat;
+        this.parientes = parientes;
+        this.generacion = generacion;
     }
 }
