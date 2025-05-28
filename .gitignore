@@ -9,6 +9,7 @@ pom.xml.next
 release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
+HELP.md
 
 # Maven Wrapper
 .mvn/
@@ -62,4 +63,5 @@ Thumbs.db
 # -------------------------------
 .env
 *.local
-
+.gitignore
+.gitattributes
