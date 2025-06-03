@@ -16,6 +16,7 @@ CRUD sobre el videojuego Monster Hunter World hecho en Spring MVC
 
 - Java OpenJDK versión 21
 - MySQL 8.0.41 o superior
+- IDE recomendado: IntellJ IDEA Community
 
 ### Instrucciones
 
