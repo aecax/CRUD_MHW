@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{index :: head}">
+    <meta charset="UTF-8">
+    <title>Nuevo Monstruo</title>
+</head>
+<body class="d-flex flex-column min-vh-100">
+<nav th:replace="~{index :: navbar}"></nav>
+
+<div class="container mt-5">
+    <h2 class="text-success" th:if="${param.save}">¡Monstruo guardado exitosamente!</h2>
+    <hr th:if="${param.save}">
+    <h2>Registrar nuevo monstruo</h2>
+    <form th:action="@{../guardarMonstruo/}" th:object="${monstruo}" th:method="post">
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" th:field="*{nombre}" class="form-control" id="nombre" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="imagen" class="form-label">URL de la Imagen</label>
+            <input type="url" th:field="*{imagen}" class="form-control" id="imagen">
+        </div>
+
+        <div class="mb-3">
+            <label for="clase" class="form-label">Clase</label>
+            <input type="text" th:field="*{clase}" class="form-control" id="clase" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="elementos" class="form-label">Elemento(s)</label>
+            <input type="text" th:field="*{elementos}" class="form-control" id="elementos">
+        </div>
+
+        <div class="mb-3">
+            <label for="estados" class="form-label">Estado(s)</label>
+            <input type="text" th:field="*{estados}" class="form-control" id="estados">
+        </div>
+
+        <div class="mb-3">
+            <label for="elementosdebil" class="form-label">Débil a</label>
+            <input type="text" th:field="*{elementosdebil}" class="form-control" id="elementosdebil">
+        </div>
+
+        <div class="mb-3">
+            <label for="habitat" class="form-label">Hábitat(s)</label>
+            <input type="text" th:field="*{habitat}" class="form-control" id="habitat">
+        </div>
+
+        <div class="mb-3">
+            <label for="parientes" class="form-label">Pariente(s)</label>
+            <input type="text" th:field="*{parientes}" class="form-control" id="parientes">
+        </div>
+
+        <div class="mb-3">
+            <label for="generacion" class="form-label">Generación</label>
+            <input type="text" th:field="*{generacion}" class="form-control" id="generacion">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+</div>
+
+</body>
+<footer th:replace="~{index :: footer}"></footer>
+<div th:replace="~{index :: jsincludes}"></div>
+</html>

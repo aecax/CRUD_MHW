@@ -14,6 +14,10 @@ public class Monstruo {
     private String parientes;
     private String generacion;
 
+    public Monstruo() {
+
+    }
+
     @Override
     public String toString() {
         return "Monstruo{" +
