@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{index :: head}">
+    <meta charset="UTF-8">
+    <title>ID Editar Monstruo</title>
+</head>
+<body class="d-flex flex-column min-vh-100">
+<nav th:replace="~{index :: navbar}"></nav>
+
+<div class="container mt-5">
+    <form th:action="@{/editarMonstruo}" method="get">
+        <div class="mb-3">
+            <label for="id" class="form-label">ID del monstruo a editar</label>
+            <input type="number" class="form-control" id="id" name="id" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Editar</button>
+    </form>
+</div>
+
+</body>
+<footer th:replace="~{index :: footer}"></footer>
+<div th:replace="~{index :: jsincludes}"></div>
+</html>

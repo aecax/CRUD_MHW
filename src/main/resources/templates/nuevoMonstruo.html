@@ -11,7 +11,7 @@
     <h2 class="text-success" th:if="${param.save}">¡Monstruo guardado exitosamente!</h2>
     <hr th:if="${param.save}">
     <h2>Registrar nuevo monstruo</h2>
-    <form th:action="@{../guardarMonstruo/}" th:object="${monstruo}" th:method="post">
+    <form th:action="@{../guardarNuevoMonstruo}" th:object="${monstruo}" th:method="post">
         <div class="mb-3">
             <label for="nombre" class="form-label">Nombre</label>
             <input type="text" th:field="*{nombre}" class="form-control" id="nombre" required>
@@ -24,7 +24,7 @@
 
         <div class="mb-3">
             <label for="clase" class="form-label">Clase</label>
-            <input type="text" th:field="*{clase}" class="form-control" id="clase" required>
+            <input type="text" th:field="*{clase}" class="form-control" id="clase">
         </div>
 
         <div class="mb-3">
@@ -38,8 +38,8 @@
         </div>
 
         <div class="mb-3">
-            <label for="elementosdebil" class="form-label">Débil a</label>
-            <input type="text" th:field="*{elementosdebil}" class="form-control" id="elementosdebil">
+            <label for="elementos_debil" class="form-label">Débil a</label>
+            <input type="text" th:field="*{elementos_debil}" class="form-control" id="elementos_debil">
         </div>
 
         <div class="mb-3">

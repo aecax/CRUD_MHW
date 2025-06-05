@@ -1,15 +1,23 @@
 package mx.unam.aragon.ico.te.crud_mhw.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 import java.util.Objects;
 
+@Entity
 public class Monstruo {
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String nombre;
     private String imagen;
     private String clase;
     private String elementos;
     private String estados;
-    private String elementosdebil;
+    private String elementos_debil;
     private String habitat;
     private String parientes;
     private String generacion;
@@ -27,7 +35,7 @@ public class Monstruo {
                 ", clase='" + clase + '\'' +
                 ", elementos='" + elementos + '\'' +
                 ", estados='" + estados + '\'' +
-                ", elementosdebil='" + elementosdebil + '\'' +
+                ", elementos_debil='" + elementos_debil + '\'' +
                 ", habitat='" + habitat + '\'' +
                 ", parientes='" + parientes + '\'' +
                 ", generacion='" + generacion + '\'' +
@@ -38,12 +46,12 @@ public class Monstruo {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Monstruo monstruo = (Monstruo) o;
-        return id == monstruo.id && Objects.equals(nombre, monstruo.nombre) && Objects.equals(imagen, monstruo.imagen) && Objects.equals(clase, monstruo.clase) && Objects.equals(elementos, monstruo.elementos) && Objects.equals(estados, monstruo.estados) && Objects.equals(elementosdebil, monstruo.elementosdebil) && Objects.equals(habitat, monstruo.habitat) && Objects.equals(parientes, monstruo.parientes) && Objects.equals(generacion, monstruo.generacion);
+        return id == monstruo.id && Objects.equals(nombre, monstruo.nombre) && Objects.equals(imagen, monstruo.imagen) && Objects.equals(clase, monstruo.clase) && Objects.equals(elementos, monstruo.elementos) && Objects.equals(estados, monstruo.estados) && Objects.equals(elementos_debil, monstruo.elementos_debil) && Objects.equals(habitat, monstruo.habitat) && Objects.equals(parientes, monstruo.parientes) && Objects.equals(generacion, monstruo.generacion);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nombre, imagen, clase, elementos, estados, elementosdebil, habitat, parientes, generacion);
+        return Objects.hash(id, nombre, imagen, clase, elementos, estados, elementos_debil, habitat, parientes, generacion);
     }
 
     public int getId() {
@@ -94,12 +102,12 @@ public class Monstruo {
         this.estados = estados;
     }
 
-    public String getElementosdebil() {
-        return elementosdebil;
+    public String getElementos_debil() {
+        return elementos_debil;
     }
 
-    public void setElementosdebil(String elementosdebil) {
-        this.elementosdebil = elementosdebil;
+    public void setElementos_debil(String elementos_debil) {
+        this.elementos_debil = elementos_debil;
     }
 
     public String getHabitat() {
@@ -126,14 +134,14 @@ public class Monstruo {
         this.generacion = generacion;
     }
 
-    public Monstruo(int id, String nombre, String imagen, String clase, String elementos, String estados, String elementosdebil, String habitat, String parientes, String generacion) {
+    public Monstruo(int id, String nombre, String imagen, String clase, String elementos, String estados, String elementos_debil, String habitat, String parientes, String generacion) {
         this.id = id;
         this.nombre = nombre;
         this.imagen = imagen;
         this.clase = clase;
         this.elementos = elementos;
         this.estados = estados;
-        this.elementosdebil = elementosdebil;
+        this.elementos_debil = elementos_debil;
         this.habitat = habitat;
         this.parientes = parientes;
         this.generacion = generacion;
