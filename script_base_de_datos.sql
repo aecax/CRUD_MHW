@@ -8,14 +8,14 @@ USE Monster_Hunter_World;
 CREATE TABLE IF NOT EXISTS Monstruo (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(25) NOT NULL,
-    imagen VARCHAR(300),
+    imagen VARCHAR(500),
     clase VARCHAR(25),
     elementos VARCHAR(30),
     estado VARCHAR(100),
     elementos_debil VARCHAR(30),
     habitat VARCHAR(50),
     parientes VARCHAR(50),
-    generacion INT
+    generacion VARCHAR(20)
 );
 
 -- Crear un usuario y contraseña para acceder a la base de datos
